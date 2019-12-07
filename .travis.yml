@@ -4,5 +4,5 @@ services:
   - docker
 script:
   - sudo docker run --privileged --name mixer -it -d -v $(pwd):/home/clr clearlinux:latest
-  - sudo docker exec -it mixer bash -c 'useradd clr; cd /home/clr; swupd bundle-add package-utils'
+  - sudo docker exec -it mixer bash -c 'useradd clr; cd /home/clr; swupd bundle-add package-utils; ls -l'
 

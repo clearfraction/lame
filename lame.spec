@@ -2,18 +2,18 @@
 # spec file for package lame
 #
 # Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
-# Copyright (c) 2012 Pascal Bleser <pascal.bleser@opensuse.org>
+# Copyright (c) 2012 Pascal Bleser &lt;&gt;
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
 # upon. The license for this file, and modifications and additions to the
 # file, is the same license as for the pristine package itself (unless the
 # license for the pristine package is not an Open Source License, in which
-# case the license is the MIT License). An "Open Source License" is a
+# case the license is the MIT License). An &quot;Open Source License&quot; is a
 # license that conforms to the Open Source Definition (Version 1.9)
 # published by the Open Source Initiative.
 
-# Please submit bugfixes or comments via http://bugs.opensuse.org/
+# Please submit bugfixes or comments via 
 #
 
 
@@ -24,9 +24,8 @@ Release:        0
 Summary:        The LAME MP3 encoder
 License:        LGPL-2.0+
 Group:          Productivity/Multimedia/Sound/Editors and Convertors
-Url:            http://lame.sourceforge.net/
-Source:         http://prdownloads.sourceforge.net/lame/lame-%{version}.tar.gz
-Source:         http://prdownloads.sourceforge.net/lame/lame-%{version}.tar.gz
+Url:            
+Source:         
 #Source99:       lame-rpmlintrc
 #Source1000:     baselibs.conf
 Patch1:         lame-field-width-fix.patch
@@ -35,7 +34,7 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  ncurses-dev
 BuildRequires:  pkg-config
-Requires:       libmp3lame%{sover} >= %{version}
+Requires:       libmp3lame%{sover} &gt;= %{version}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  nasm
 BuildRequires:  pkgconfig(gtk+-2.0)
@@ -77,14 +76,14 @@ Contains the header files for use with LAME's encoding library.
 %package -n lame-mp3rtp
 Summary:        MP3 Encoder for RTP Streaming
 Group:          Productivity/Multimedia/Sound/Editors and Convertors
-Requires:       libmp3lame%{sover} >= %{version}
+Requires:       libmp3lame%{sover} &gt;= %{version}
 
 %description -n lame-mp3rtp
 LAME is an encoder that converts audio to the MP3 file format. It has
 an improved psychoacoustic model and performs well in codec listening
 tests.
 
-This package includes "mp3rtp", an MP3 encoder with RTP streaming of the output.
+This package includes &quot;mp3rtp&quot;, an MP3 encoder with RTP streaming of the output.
 
 
 %prep
@@ -92,8 +91,8 @@ This package includes "mp3rtp", an MP3 encoder with RTP streaming of the output.
 %patch1 -p1
 
 %build
-LIBS="-lm" \
-CFLAGS="%{optflags}" \
+LIBS=&quot;-lm&quot; \
+CFLAGS=&quot;%{optflags}&quot; \
 %configure \
     --enable-nasm \
     --enable-decoder \
@@ -111,10 +110,10 @@ make test
 
 %install
 make install pkgdocdir=%{_defaultdocdir}/%{name}/ DESTDIR=%{buildroot}
-rm -f %{buildroot}%{_libdir}/libmp3lame.la
+rm -f %{buildroot}%{_libdir}/
 
 for f in ChangeLog README TODO USAGE; do
-    install -m0644 "$f" "%{buildroot}%{_defaultdocdir}/%{name}/"
+    install -m0644 &quot;$f&quot; &quot;%{buildroot}%{_defaultdocdir}/%{name}/&quot;
 done
 
 %post   -n libmp3lame%{sover} -p /sbin/ldconfig
@@ -133,14 +132,14 @@ done
 %files -n libmp3lame%{sover}
 %defattr(0644,root,root,0755)
 %doc COPYING LICENSE
-%{_libdir}/libmp3lame.so.%{sover}
-%{_libdir}/libmp3lame.so.%{sover}.*
+%{_libdir}/.%{sover}
+%{_libdir}/.%{sover}.*
 
 %files -n libmp3lame-devel
 %defattr(-,root,root)
 %doc API HACKING STYLEGUIDE
 %{_includedir}/lame/
-%{_libdir}/libmp3lame.so
+%{_libdir}/
 
 %files -n lame-mp3rtp
 %defattr(-,root,root)

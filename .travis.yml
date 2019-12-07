@@ -3,6 +3,6 @@ sudo: required
 services:
   - docker
 script:
-  - sudo docker run --privileged --name mixer -it -d -v $(pwd):/home/clr clearlinux:latest
+  - sudo docker run --privileged --name mixer -it -d -v $(pwd):/home/clr --cap-add=SYS_ADMIN clearlinux:latest
   - sudo docker exec -it mixer bash -c 'useradd clr && usermod -aG  mock,wheelnopw,kvm clr; cd /home/clr; ls -l; swupd bundle-add package-utils'
   - sudo docker exec -it mixer su clr -c 'echo "Hello from clr!"'

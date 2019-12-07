@@ -26,19 +26,18 @@ License:        LGPL-2.0+
 Group:          Productivity/Multimedia/Sound/Editors and Convertors
 Url:            http://lame.sourceforge.net/
 Source:         http://prdownloads.sourceforge.net/lame/lame-%{version}.tar.gz
-Source99:       lame-rpmlintrc
-Source1000:     baselibs.conf
+Source:         http://prdownloads.sourceforge.net/lame/lame-%{version}.tar.gz
+#Source99:       lame-rpmlintrc
+#Source1000:     baselibs.conf
 Patch1:         lame-field-width-fix.patch
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  libtool
-BuildRequires:  ncurses-devel
-BuildRequires:  pkgconfig
+BuildRequires:  ncurses-dev
+BuildRequires:  pkg-config
 Requires:       libmp3lame%{sover} >= %{version}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-%ifarch %ix86
 BuildRequires:  nasm
-%endif
 BuildRequires:  pkgconfig(gtk+-2.0)
 
 %description

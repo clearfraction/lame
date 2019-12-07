@@ -4,5 +4,6 @@ services:
   - docker
 script:
   - sudo docker run --privileged --name mixer -it -d -v $(pwd):/home/clr --cap-add=SYS_ADMIN clearlinux:latest
-  - sudo docker exec -it mixer bash -c 'useradd clr && usermod -aG  mock,wheelnopw,kvm clr; cd /home/clr; ls -l; swupd bundle-add package-utils'
-  - sudo docker exec -it mixer su clr -c 'echo "Hello from clr!"'
+  - sudo docker exec -it mixer bash -c 'swupd bundle-add package-utils curl; curl -L https://gist.github.com/paulcarroty/ec7133a6d41762e23cdacc75dab69423/raw/9869938ddb4471b177d27de8bffdea7fd4673099/spectool -o /usr/bin/spectool; chmod +x /usr/bin/spectool'
+  - sudo docker exec -it mixer bash -c 'dnf config-manager --add-repo https://download.clearlinux.org/current/x86_64/os/Packages/ ; dnf builddep *.spec'
+  - sudo docker exec -it mixer bash -c 'spectool -g *.spec; rpmbuild -bb *.spec --define "_sourcedir $PWD"'

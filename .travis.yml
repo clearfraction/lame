@@ -5,5 +5,5 @@ services:
 script:
   - sudo docker run --privileged --name mixer -it -d -v $(pwd):/home/ --cap-add=SYS_ADMIN clearlinux:latest
   - sudo docker exec -it mixer bash -c 'swupd bundle-add package-utils curl; curl -L https://gist.github.com/paulcarroty/ec7133a6d41762e23cdacc75dab69423/raw/9869938ddb4471b177d27de8bffdea7fd4673099/spectool -o /usr/bin/spectool; chmod +x /usr/bin/spectool'
-  - sudo docker exec -it mixer bash -c 'dnf config-manager --add-repo https://download.clearlinux.org/current/x86_64/os/ ; dnf -y groupinstall build srpm-build; cd /home && dnf -y builddep *.spec'
-  - sudo docker exec -it mixer bash -c 'spectool -g *.spec; rpmbuild -bb *.spec --define "_sourcedir $PWD"'
+  - sudo docker exec -it mixer bash -c 'dnf config-manager --add-repo https://download.clearlinux.org/current/x86_64/os/ ; dnf -y groupinstall build srpm-build; cd /home && dnf -y builddep /home/*.spec'
+  - sudo docker exec -it mixer bash -c 'spectool -g *.spec; rpmbuild -bb /home/*.spec --define "_sourcedir $PWD"'

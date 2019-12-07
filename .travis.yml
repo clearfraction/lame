@@ -1,0 +1,8 @@
+language: generic
+sudo: required
+services:
+  - docker
+script:
+  - sudo docker run --privileged --name mixer -it -d -v $(pwd):/home/clr/mix clearlinux/clr-sdk --mixdir=/home/clr/mix
+  - sudo docker exec -it mixer bash -c 'echo "Hello world!"; echo $PWD; ls -l'
+

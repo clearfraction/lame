@@ -36,7 +36,7 @@ BuildRequires:  ncurses-dev
 BuildRequires:  pkg-config
 BuildRequires:  nasm
 BuildRequires:  pkgconfig(gtk+-2.0)
-Requires:       libmp3lame%{sover} &gt;= %{version}
+Requires:       libmp3lame%{sover} >= %{version}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 
@@ -77,7 +77,7 @@ Contains the header files for use with LAME's encoding library.
 %package -n lame-mp3rtp
 Summary:        MP3 Encoder for RTP Streaming
 Group:          Productivity/Multimedia/Sound/Editors and Convertors
-Requires:       libmp3lame%{sover} &gt;= %{version}
+Requires:       libmp3lame%{sover} >= %{version}
 
 %description -n lame-mp3rtp
 LAME is an encoder that converts audio to the MP3 file format. It has

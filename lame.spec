@@ -35,7 +35,7 @@ BuildRequires:  libtool
 BuildRequires:  ncurses-dev
 BuildRequires:  pkg-config
 BuildRequires:  nasm
-#BuildRequires:  pkgconfig(gtk+-2.0)
+BuildRequires:  pkgconfig(gtk+-2.0)
 Requires:       libmp3lame%{sover} &gt;= %{version}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 

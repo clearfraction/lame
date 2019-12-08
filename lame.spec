@@ -34,10 +34,11 @@ BuildRequires:  automake
 BuildRequires:  libtool
 BuildRequires:  ncurses-dev
 BuildRequires:  pkg-config
+BuildRequires:  nasm
+#BuildRequires:  pkgconfig(gtk+-2.0)
 Requires:       libmp3lame%{sover} &gt;= %{version}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  nasm
-BuildRequires:  pkgconfig(gtk+-2.0)
+
 
 %description
 LAME is an educational tool to be used for learning about MP3 encoding.

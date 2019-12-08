@@ -24,8 +24,8 @@ Release:        0
 Summary:        The LAME MP3 encoder
 License:        LGPL-2.0+
 Group:          Productivity/Multimedia/Sound/Editors and Convertors
-Url:            
-Source:         
+Url:            http://lame.sourceforge.net/
+Source:         http://prdownloads.sourceforge.net/lame/lame-%{version}.tar.gz     
 #Source99:       lame-rpmlintrc
 #Source1000:     baselibs.conf
 Patch1:         lame-field-width-fix.patch

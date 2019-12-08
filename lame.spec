@@ -84,7 +84,7 @@ LAME is an encoder that converts audio to the MP3 file format. It has
 an improved psychoacoustic model and performs well in codec listening
 tests.
 
-This package includes &quot;mp3rtp&quot;, an MP3 encoder with RTP streaming of the output.
+This package includes "mp3rtp", an MP3 encoder with RTP streaming of the output.
 
 
 %prep
@@ -92,8 +92,8 @@ This package includes &quot;mp3rtp&quot;, an MP3 encoder with RTP streaming of t
 %patch1 -p1
 
 %build
-LIBS=&quot;-lm&quot; \
-CFLAGS=&quot;%{optflags}&quot; \
+LIBS="-lm" \
+CFLAGS="%{optflags}" \
 %configure \
     --enable-nasm \
     --enable-decoder \
@@ -111,10 +111,10 @@ make test
 
 %install
 make install pkgdocdir=%{_defaultdocdir}/%{name}/ DESTDIR=%{buildroot}
-rm -f %{buildroot}%{_libdir}/
+rm -f %{buildroot}%{_libdir}/libmp3lame.la
 
 for f in ChangeLog README TODO USAGE; do
-    install -m0644 &quot;$f&quot; &quot;%{buildroot}%{_defaultdocdir}/%{name}/&quot;
+    install -m0644 "$f" "%{buildroot}%{_defaultdocdir}/%{name}/"
 done
 
 %post   -n libmp3lame%{sover} -p /sbin/ldconfig
@@ -133,18 +133,17 @@ done
 %files -n libmp3lame%{sover}
 %defattr(0644,root,root,0755)
 %doc COPYING LICENSE
-%{_libdir}/.%{sover}
-%{_libdir}/.%{sover}.*
+%{_libdir}/libmp3lame.so.%{sover}
+%{_libdir}/libmp3lame.so.%{sover}.*
 
 %files -n libmp3lame-devel
 %defattr(-,root,root)
 %doc API HACKING STYLEGUIDE
 %{_includedir}/lame/
-%{_libdir}/
+%{_libdir}/libmp3lame.so
 
 %files -n lame-mp3rtp
 %defattr(-,root,root)
 %{_bindir}/mp3rtp
 
 %changelog
-

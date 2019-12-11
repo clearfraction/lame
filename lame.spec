@@ -1,4 +1,3 @@
-#
 # spec file for package lame
 #
 # Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.

@@ -63,12 +63,12 @@ LAME is an encoder that converts audio to the MP3 file format. It has
 an improved psychoacoustic model and performs well in codec listening
 tests.
 
-%package -n libmp3lame-devel
+%package -n libmp3lame-dev
 Summary:        Development files for the LAME MP3 encoder
 Group:          Development/Libraries/C and C++
 Requires:       libmp3lame%{sover} = %{version}
 
-%description -n libmp3lame-devel
+%description -n libmp3lame-dev
 Contains the header files for use with LAME's encoding library.
 
 %package -n lame-mp3rtp
@@ -133,7 +133,7 @@ done
 %{_libdir}/libmp3lame.so.%{sover}
 %{_libdir}/libmp3lame.so.%{sover}.*
 
-%files -n libmp3lame-devel
+%files -n libmp3lame-dev
 %defattr(-,root,root)
 %doc API HACKING STYLEGUIDE
 %{_includedir}/lame/

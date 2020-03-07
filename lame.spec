@@ -17,7 +17,7 @@
 %define sover 0
 Name:           lame
 Version:        3.100
-Release:        0
+Release:        2
 Summary:        The LAME MP3 encoder
 License:        LGPL-2.0+
 Group:          Productivity/Multimedia/Sound/Editors and Convertors
@@ -126,9 +126,9 @@ for f in ChangeLog README TODO USAGE; do
     install -m0644 "$f" "%{buildroot}%{_defaultdocdir}/%{name}/"
 done
 
-%post   -n libmp3lame%{sover} -p /sbin/ldconfig
+%post   -n libmp3lame%{sover} -p /usr/bin/ldconfig
 
-%postun -n libmp3lame%{sover} -p /sbin/ldconfig
+%postun -n libmp3lame%{sover} -p /usr/bin/ldconfig
 
 %files
 %defattr(-,root,root)

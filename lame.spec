@@ -12,8 +12,6 @@
 # license that conforms to the Open Source Definition (Version 1.9)
 # published by the Open Source Initiative.
 
-
-
 %define sover 0
 Name:           lame
 Version:        3.100

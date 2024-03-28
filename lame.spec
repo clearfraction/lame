@@ -1,18 +1,5 @@
-# spec file for package lame
-#
-# Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
-# Copyright (c) 2012 Pascal Bleser &lt;&gt;
-#
-# All modifications and additions to the file contributed by third parties
-# remain the property of their copyright owners, unless otherwise agreed
-# upon. The license for this file, and modifications and additions to the
-# file, is the same license as for the pristine package itself (unless the
-# license for the pristine package is not an Open Source License, in which
-# case the license is the MIT License). An &quot;Open Source License&quot; is a
-# license that conforms to the Open Source Definition (Version 1.9)
-# published by the Open Source Initiative.
-
 %define sover 0
+
 Name:           lame
 Version:        3.100
 Release:        3
@@ -21,8 +8,6 @@ License:        LGPL-2.0+
 Group:          Productivity/Multimedia/Sound/Editors and Convertors
 Url:            http://lame.sourceforge.net/
 Source:         http://prdownloads.sourceforge.net/lame/lame-%{version}.tar.gz     
-#Source99:      lame-rpmlintrc
-#Source1000:    baselibs.conf
 Patch1:         lame-field-width-fix.patch
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -150,4 +135,16 @@ done
 %{_bindir}/mp3rtp
 
 %changelog
+# spec file for package lame
 #
+# Copyright (c) 2017 SUSE LINUX GmbH, Nuernberg, Germany.
+# Copyright (c) 2012 Pascal Bleser &lt;&gt;
+#
+# All modifications and additions to the file contributed by third parties
+# remain the property of their copyright owners, unless otherwise agreed
+# upon. The license for this file, and modifications and additions to the
+# file, is the same license as for the pristine package itself (unless the
+# license for the pristine package is not an Open Source License, in which
+# case the license is the MIT License). An &quot;Open Source License&quot; is a
+# license that conforms to the Open Source Definition (Version 1.9)
+# published by the Open Source Initiative.
